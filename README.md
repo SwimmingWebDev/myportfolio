@@ -13,7 +13,7 @@ High Availability Portfolio with OAuth and GitHub Contributions Display
 
 #### Frontend
 
-- [ ] Build a portfolio using HTML/CSS/JS
+- [ ] Build a portfolio using HTML/CSS/JS (Angela, Henry, Yang)
 - [ ] Have aesthetic and user-friendly interface
 - [ ] Have clear, and intuitive navigation
 - [ ] Have sections like "About Me", "Projects", and a "GitHub Contributions"
@@ -22,7 +22,7 @@ High Availability Portfolio with OAuth and GitHub Contributions Display
 
 #### Backend
 
-- [ ] Use Nginx as the prmary web server to host the portfolio
+- [ ] Use Nginx as the primary web server to host the portfolio
 - [ ] After only OAuth authentication, accessible for updating projects
 - [ ] Set up two or more Nginx instances behind HAProxy to balance incoming traffic
 

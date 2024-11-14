@@ -9,28 +9,32 @@ High Availability Portfolio with OAuth and GitHub Contributions Display
 1. Install packages `npm install`
 2. Run server `npm run dev`
 
+### UI/UX
+
+- [Wireframe](https://www.figma.com/board/QfCCKDbTZF5dYszUv5VnlW/Untitled?node-id=0-1&t=g2SCDmbtJGdMydn8-1)
+
 ### Requirements
 
 #### Frontend
 
 - [ ] Build a portfolio using HTML/CSS/JS (Angela, Henry, Yang)
-- [ ] Have aesthetic and user-friendly interface
-- [ ] Have clear, and intuitive navigation
-- [ ] Have sections like "About Me", "Projects", and a "GitHub Contributions"
-- [ ] Must allow users to log in via Google OAuth
-- [ ] Implement CRUD Functionality for updating projects
+- [ ] Have aesthetic and user-friendly interface (Yang)
+- [ ] Have clear, and intuitive navigation (Yang)
+- [ ] Have sections like "About Me", "Projects", and a "GitHub Contributions" (Yang)
+- [ ] Must allow users to log in via Google OAuth (Yang)
+- [ ] Implement CRUD Functionality for updating projects (Yang)
 
 #### Backend
 
 - [ ] Use Nginx as the primary web server to host the portfolio
-- [ ] After only OAuth authentication, accessible for updating projects
+- [ ] After only OAuth authentication, accessible for updating projects (Yang)
 - [ ] Set up two or more Nginx instances behind HAProxy to balance incoming traffic
 
 #### OAuth Implementation
 
-- [ ] Use Google Cloud OAuth 2.0 to allow users to log in
-- [ ] Only authenticated users have access to edit the portfolio
-- [ ] Ensure proper token handling and authentication flows
+- [ ] Use Google Cloud OAuth 2.0 to allow users to log in (Yang)
+- [ ] Only authenticated users have access to edit the portfolio (Yang)
+- [ ] Ensure proper token handling and authentication flows (Yang)
 
 #### Load Balancing with HAProxy
 
@@ -40,10 +44,10 @@ High Availability Portfolio with OAuth and GitHub Contributions Display
 
 #### GitHub Contributions Widjet
 
-- [ ] Use GitHub widget
-- [ ] Integrate the widget by showcasing GitHub
-- [ ] Contributions using the CDN recommended by the repo
-- [ ] Ensure the widget loads efficiently and matches the overall design
+- [ ] Use GitHub widget (Yang)
+- [ ] Integrate the widget by showcasing GitHub (Yang)
+- [ ] Contributions using the CDN recommended by the repo (Yang)
+- [ ] Ensure the widget loads efficiently and matches the overall design (Yang)
 
 #### CDN
 
@@ -53,6 +57,6 @@ High Availability Portfolio with OAuth and GitHub Contributions Display
 
 #### Documentation
 
-- [ ] Detailed explanation of how OAuth, HAProxy, and Nginx were configured
-- [ ] Report on how the GitHub Contributions widget was integrated
+- [ ] Detailed explanation of how OAuth, HAProxy, and Nginx were configured (Angela, Yang)
+- [ ] Report on how the GitHub Contributions widget was integrated (Yang)
 - [ ] Report on how the CDN enhances performance

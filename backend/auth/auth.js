@@ -5,7 +5,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const router = express.Router();
 
 // Allowed Emails
-const ALLOWED_EMAILS = ['swimmingwebdev@gmail.com'];
+const ALLOWED_EMAILS = ['swimmingwebdev@gmail.com', 'angiehhu@gmail.com'];
 
 // Load keys
 const keys = require('../config/keys');

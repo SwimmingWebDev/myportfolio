@@ -17,11 +17,11 @@ High Availability Portfolio with OAuth and GitHub Contributions Display
 
 #### Frontend
 
-- [ ] Build a portfolio using HTML/CSS/JS (Angela, Henry, Yang)
+- [x] Build a portfolio using HTML/CSS/JS (Angela, Henry, Yang)
 - [ ] Have aesthetic and user-friendly interface (Yang)
 - [ ] Have clear, and intuitive navigation (Yang)
-- [ ] Have sections like "About Me", "Projects", and a "GitHub Contributions" (Yang)
-- [ ] Must allow users to log in via Google OAuth (Yang)
+- [x] Have sections like "About Me", "Projects", and a "GitHub Contributions" (Yang)
+- [x] Must allow users to log in via Google OAuth (Yang)
 - [ ] Implement CRUD Functionality for updating projects (Yang)
 
 #### Backend

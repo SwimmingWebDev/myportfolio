@@ -133,14 +133,12 @@ const addProject = async (newProject) => {
   }
 };
 
-// Edit an existing project
 // Initialize edit page (edit.html)
 const initializeEditPage = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const projectId = urlParams.get('id');
   const editForm = document.getElementById('editForm');
 
-  // Fetch project details and populate the form
   fetch(`/api/project/${projectId}`)
     .then((res) => {
       if (!res.ok) throw new Error('Failed to fetch project details');
@@ -149,9 +147,14 @@ const initializeEditPage = () => {
     .then((data) => {
       document.getElementById('title').value = data.title;
       document.getElementById('description').value = data.description;
-      document.getElementById('imagePath').value = data.imagePath;
       document.getElementById('viewLink').value = data.viewLink;
       document.getElementById('githubLink').value = data.githubLink;
+
+      if (data.imagePath) {
+        const currentImage = document.createElement('p');
+        currentImage.textContent = `Current Image: ${data.imagePath}`;
+        editForm.insertBefore(currentImage, editForm.firstChild);
+      }
     })
     .catch((error) => console.error('Error fetching project details:', error));
 
@@ -159,26 +162,19 @@ const initializeEditPage = () => {
   editForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const updatedProject = {
-      title: document.getElementById('title').value,
-      description: document.getElementById('description').value,
-      imagePath: document.getElementById('imagePath').value,
-      viewLink: document.getElementById('viewLink').value,
-      githubLink: document.getElementById('githubLink').value,
-    };
+    const formData = new FormData(editForm);
 
     try {
-      const response = await fetch(`/api/project/${projectId}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(updatedProject),
+      const response = await fetch(`/api/project/${projectId}?_method=PUT`, {
+        method: 'POST', // Method remains POST; `_method` overrides it to PUT
+        body: formData,
       });
 
       if (!response.ok) {
         throw new Error('Failed to update project');
       }
 
-      window.location.href = '/';
+      window.location.href = '/'; // Redirect after successful update
     } catch (error) {
       console.error('Error updating project:', error);
     }

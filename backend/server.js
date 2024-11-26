@@ -30,14 +30,23 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, '../frontend/views'));
 
+// necessary middleware to process PUT requests containing files
+// because Multer is only used for the POST route
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
+
 // Multer Configuration
-const storage = multer.diskStorage({
-  destination: './frontend/public/images',
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname)); // Unique file names
+const upload = multer({
+  dest: './frontend/public/images',
+  fileFilter: (req, file, cb) => {
+    // Only accept certain file types
+    const ext = path.extname(file.originalname).toLowerCase();
+    if (ext !== '.jpg' && ext !== '.png' && ext !== '.jpeg') {
+      return cb(new Error('Only images are allowed'));
+    }
+    cb(null, true);
   },
 });
-const upload = multer({ storage });
 
 // data for projects(Temporary - will be deleted)
 let projects = [
@@ -97,19 +106,24 @@ app.get('/api/projects/add', (req, res) => {
 });
 
 app.post('/api/projects/add', upload.single('image'), (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/public/add.html'));
-  const { title, description } = req.body;
+  const { title, description, viewLink, githubLink } = req.body;
+
   const newProject = {
     id: Date.now(),
     title,
     description,
     imagePath: `/images/${req.file.filename}`,
-    viewLink: '#',
-    githubLink: '#',
+    viewLink,
+    githubLink,
   };
 
   projects.push(newProject);
-  res.redirect('/'); // Redirect to the main page after adding
+
+  res.redirect('/');
+});
+
+app.get('/edit.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/public/edit.html'));
 });
 
 app.get('/api/project/:id', (req, res) => {
@@ -123,7 +137,7 @@ app.get('/api/project/:id', (req, res) => {
   }
 });
 
-app.put('/api/project/:id', (req, res) => {
+app.put('/api/project/:id', upload.single('imagePath'), (req, res) => {
   const { id } = req.params;
   const { title, description, viewLink, githubLink } = req.body;
   const project = projects.find((proj) => proj.id == id);
@@ -131,9 +145,13 @@ app.put('/api/project/:id', (req, res) => {
   if (project) {
     project.title = title || project.title;
     project.description = description || project.description;
-    project.imagePath = imagePath || project.imagePath;
     project.viewLink = viewLink || project.viewLink;
     project.githubLink = githubLink || project.githubLink;
+
+    // Update the image if a new one is uploaded
+    if (req.file) {
+      project.imagePath = `/images/${req.file.filename}`;
+    }
 
     res.json(project);
   } else {

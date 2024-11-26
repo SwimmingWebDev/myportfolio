@@ -289,6 +289,25 @@ footer {
   padding: 1rem 0;
 }
 
+/* start of admin options */
+.admin-options span {
+  color: var(--font-color);
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: all 0.1s ease-out;
+}
+
+
+.admin-options span:hover {
+  color: var(--secondary-color);
+}
+
+.admin-options i {
+  padding-right: 0.3rem;
+}
+
+/* end of admin options */
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {

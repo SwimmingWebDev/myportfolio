@@ -9,9 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         authLink.innerHTML = `<a href="/auth/logout">Logout</a>`;
 
         // Show options to edit 'projects' section if logged in
-        const adminOptions = document.getElementById('admin-options');
-        if (adminOptions) {
-          adminOptions.style.display = 'block';
+        const adminOptionsNew = document.getElementById('admin-options-new');
+        const adminOptionsEdit = document.getElementById('admin-options-edit');
+        if (adminOptionsNew && adminOptionsEdit) {
+          adminOptionsNew.style.display = 'block';
+          adminOptionsEdit.style.display = 'block';
         }
       }
     })

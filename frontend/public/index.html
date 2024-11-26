@@ -7,6 +7,8 @@
 
     <title>My Portflio</title>
     <link rel="stylesheet" href="/css/style.css">
+    <!-- font-awesome icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- GitHub Contributions Widget -->
     <script type="module" defer
         src="https://cdn.jsdelivr.net/gh/imananoosheh/github-contributions-fetch@latest/github_calendar_widget.js"></script>
@@ -26,67 +28,80 @@
                 <li id="auth-link"><a href="/auth/google">Login</a></li>
             </ul>
         </nav>
-        <h1>Hi, my<br>
-            name is <strong>Misha.</strong></h1>
-        <p>I'm a creative developer based in Vancouver, Canada. I enjoy crafting solid, scalable digital products that
-            provide
-            exceptional user experiences.</p>
+
+        <div class="hero-container">
+            <h1>Hi, my<br>
+                name is <strong>Misha.</strong></h1>
+            <p>I'm a creative developer based in Vancouver, Canada.<br>I enjoy crafting solid, scalable digital products
+                that
+                provide
+                exceptional user experiences.</p>
+        </div>
+
     </header>
 
     <main>
         <section id="about">
             <div class="section-title">
-                <h3>About me</h3>
+                <span class="line"></span>
+                <span class="text">About me</span>
             </div>
-            <div>
-                <h2>Design</h2>
-                <p>I'm probably not the typical designer positioned behind an Illustrator artboard adjusting pixels, but
-                    I
-                    design. Immersed
-                    in stylesheets tweaking font sizes and contemplating layouts is where you'll find me (~_^). I'm
-                    committed to creating
-                    fluent user experiences while staying fashionable.</p>
+            <div class="content-container">
+                <div class="section">
+                    <h2>Design</h2>
+                    <p>I'm probably not the typical designer positioned behind an Illustrator artboard adjusting pixels,
+                        but
+                        I
+                        design. Immersed
+                        in stylesheets tweaking font sizes and contemplating layouts is where you'll find me (~_^). I'm
+                        committed to creating
+                        fluent user experiences while staying fashionable.</p>
+                </div>
+                <div class="section-right">
+                    <h2>Engineering</h2>
+                    <p>In building JavaScript applications, I'm equipped with just the right tools, and can absolutely
+                        function independently
+                        of them to deliver fast, resilient solutions optimized for scale — performance and scalabilty
+                        are
+                        priorities on my
+                        radar.</p>
+                </div>
             </div>
-            <div>
-                <h2>Engineering</h2>
-                <p>In building JavaScript applications, I'm equipped with just the right tools, and can absolutely
-                    function independently
-                    of them to deliver fast, resilient solutions optimized for scale — performance and scalabilty are
-                    priorities on my
-                    radar.</p>
-            </div>
-
         </section>
 
         <section id="github">
             <div class="section-title">
-                <h3>GitHub Contributions</h3>
+                <span class="line"></span>
+                <span class="text">GitHub Contributions</span>
             </div>
-            <div id="calendar-component" username="SwimmingWebDev" background-color="#ffffff" theme-color="#000000">
+            <div class="github-container">
+                <div id="calendar-component" class="git-container" username="SwimmingWebDev" background-color="#f0ede4"
+                    theme-color="#000000">
+                </div>
+                <small><i class="fa-brands fa-github"></i>https://github.com/swimmingwebdev</small>
+                <p>Added a GitHub contributions widget to showcase my dedication and passion for programming. This
+                    widget highlights my
+                    recent commits, project contributions, and consistent activity, reflecting a commitment to
+                    continuous improvement and
+                    collaborative coding</p>
             </div>
-            <small>https://github.com/swimmingwebdev</small>
-            <p>Added a GitHub contributions widget to showcase my dedication and passion for programming. This
-                widget highlights my
-                recent commits, project contributions, and consistent activity, reflecting a commitment to
-                continuous improvement and
-                collaborative coding</p>
-
         </section>
 
         <section id="projects">
             <div class="section-title">
-                <h3>Projects</h3>
+                <span class="line"></span>
+                <span class="text">Projects</span>
             </div>
             <div class="admin-options" id="admin-options" style="display: none;">
                 <p style="color:red">Add new project (only for user logged in)</p>
             </div>
-            <div id="project-list">
+            <div class="projects-container">
                 <!-- will be loaded project CRUD elements -->
-                <div class="project-container">
-                    <div class="thumbnail"></div>
-                    <div class="contents">
+                <div class="project">
+                    <div class="project-image"></div>
+                    <div class="project-content">
                         <div class="texts">
-                            <p>Dynamic E-Commerce Platform</p>
+                            <h3>Dynamic E-Commerce Platform</h3>
                             <p>Built a responsive e-commerce platform with HTML, CSS, and React.js for the frontend and
                                 Node.js with Express for the
                                 backend. The platform features secure user authentication, a custom shopping cart,
@@ -95,18 +110,18 @@
                                 integrations. Implemented RESTful APIs and used MySQL for managing product inventory and
                                 order data.</p>
                         </div>
-                        <div class="links">
-                            <p>View</p>
-                            <p>GitHub</p>
+                        <div class="project-links">
+                            <p><i class="fa-solid fa-arrow-up-right-from-square"></i>View</p>
+                            <p><i class="fa-brands fa-github"></i>GitHub</p>
                         </div>
 
                     </div>
                 </div>
-                <div class="project-container">
-                    <div class="thumbnail"></div>
-                    <div class="contents">
+                <div class="project">
+                    <div class="project-image"></div>
+                    <div class="project-content">
                         <div class="texts">
-                            <p>Machine Learning Dashboard</p>
+                            <h3>Machine Learning Dashboard</h3>
                             <p>Developed a dashboard to visualize machine learning data and predictions, using Flask for
                                 the backend and React.js for
                                 the frontend. The application retrieves and processes data from a MySQL database and
@@ -115,18 +130,18 @@
                                 users to filter and analyze
                                 specific data points.</p>
                         </div>
-                        <div class="links">
-                            <p>View</p>
-                            <p>GitHub</p>
+                        <div class="project-links">
+                            <p><i class="fa-solid fa-arrow-up-right-from-square"></i>View</p>
+                            <p><i class="fa-brands fa-github"></i>GitHub</p>
                         </div>
-
                     </div>
                 </div>
-                <div class="project-container">
-                    <div class="thumbnail"></div>
-                    <div class="contents">
+
+                <div class="project">
+                    <div class="project-image"></div>
+                    <div class="project-content">
                         <div class="texts">
-                            <p>Portfolio Blog with CMS</p>
+                            <h3>Portfolio Blog with CMS</h3>
                             <p>Built a personal blog with a content management system (CMS) to manage and display posts,
                                 using Django for the backend
                                 and React.js for the frontend. Integrated MySQL for database management and created a
@@ -135,33 +150,27 @@
                                 optimization and a responsive
                                 design</p>
                         </div>
-                        <div class="links">
-                            <p>View</p>
-                            <p>GitHub</p>
+                        <div class="project-links">
+                            <p><i class="fa-solid fa-arrow-up-right-from-square"></i>View</p>
+                            <p><i class="fa-brands fa-github"></i>GitHub</p>
                         </div>
-
                     </div>
                 </div>
             </div>
+
         </section>
 
         <section id="contact">
             <div class="section-title">
-                <h3>Contact</h3>
+                <span class="line"></span>
+                <span class="text">Contact</span>
             </div>
-            <h4>Got a question, proposal or project or want to work together on something? Feel free to reach out.</h4>
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
+            <div class="contact-container">
+                <h3>Got a question, or want to work together on something? Feel free to reach
+                    out.
+                </h3>
+                <p>misha@gmail.com</p>
+            </div>
         </section>
     </main>
 

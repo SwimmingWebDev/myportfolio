@@ -17,3 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch((error) => console.error('Error checking login status:', error));
 });
+
+document.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 700) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});

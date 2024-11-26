@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --bg-color: #f0ede4;
+  --font-color: #141414;
+  --primary-color: #79deff;
+  --light-color: #dadada;
+  --secondary-color: #2b4afe;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,16 +15,38 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--font-color);
 }
 
-header {
-  padding: 1rem 0;
-  text-align: center;
+
+nav {
+  display: flex;
+  font-size: 1rem;
+  align-items: center;
+  padding: 1rem;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: var(--bg-color);
+  border-bottom: 1px solid var(--font-color);
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
-header nav ul {
+nav.scrolled {
+  color: var(--font-color);
+  background-color: #f0ede4bd;
+  transition: color 0.5s, background-color 0.5s;
+
+}
+
+nav ul {
   list-style: none;
   padding: 0;
   display: flex;
@@ -22,17 +54,58 @@ header nav ul {
   flex-wrap: wrap;
 }
 
-header nav ul li {
+nav ul li {
   margin: 0 1rem;
 }
 
-header nav ul li a {
+nav a {
+  color: var(--bg-color);
   text-decoration: none;
-  font-size: 1.1rem;
+  transition: all 0.1s ease-out;
 }
 
-h1 {
+nav.scrolled a {
+  color: var(--font-color);
+  transition: all 0.1s ease-out;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+nav.scrolled a:hover {
+  color: var(--secondary-color);
+
+}
+
+
+/* Photo by Sandeep Singh */
+.hero-container {
+  position: relative;
+  background-image: url('../images/img_hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--bg-color);
+  padding: 50px;
+  text-align: left;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-container h1 {
+  font-weight: 400;
+  font-size: 3.7rem;
+  line-height: 3.7rem;
   margin-bottom: 0.5rem;
+}
+
+.hero-container p {
+  font-weight: 300;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
 }
 
 main {
@@ -40,18 +113,175 @@ main {
 }
 
 section {
-  margin-bottom: 2rem;
+  padding-top: 5rem;
+  margin-bottom: 4rem;
 }
 
-#projects #project-list {
+
+.section-title {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 10px;
+  /* Spacing between the line and text */
 }
 
-#projects #project-list .project-item {
-  padding: 1rem;
-  flex: 1 1 calc(33.333% - 1rem);
+.section-title .line {
+  flex: 0.2;
+  height: 0.5px;
+  background-color: var(--font-color)
+}
+
+.section-title .text {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 50px 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+
+}
+
+.section {
+  flex: 1;
+  text-align: left;
+}
+
+.section h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.section p {
+  font-size: 1.3rem;
+  max-width: 70%;
+  line-height: 1.4;
+}
+
+.section-right {
+  flex: 1;
+  justify-items: end;
+  text-align: right;
+}
+
+.section-right h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.section-right p {
+  font-size: 1.3rem;
+  max-width: 70%;
+  line-height: 1.4;
+}
+
+.github-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.git-container {
+  border: 1px solid var(--font-color);
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+#github small {
+  font-size: 1rem;
+}
+
+#github small i {
+  padding-right: 0.6rem;
+}
+
+#github p {
+  margin-top: 1rem;
+  font-weight: 300;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+}
+
+.projects-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  background: var(--bg-color);
+  overflow: hidden;
+}
+
+.project:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.project-image {
+  flex: 1;
+  height: 200px;
+  background-color: var(--light-color);
+}
+
+.project-content {
+  flex: 2;
+  padding: 20px;
+}
+
+.project-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.project-content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.project-links i {
+  padding-right: 0.6rem;
+}
+
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.contact-container h3 {
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.contact-container p {
+  font-size: 1.5rem;
+  line-height: 1.6rem;
 }
 
 footer {
@@ -59,16 +289,11 @@ footer {
   padding: 1rem 0;
 }
 
+
 /* Responsive Styles */
 @media (max-width: 768px) {
-  header nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  header nav ul li {
-    margin: 0.5rem 0;
-  }
+
 
   #projects #project-list .project-item {
     flex: 1 1 calc(50% - 1rem);

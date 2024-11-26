@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>Edit Project</h1>
+    <form id="editForm" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_method" value="PUT" />
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required />
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
+      <label for="image">Image:</label>
+      <input id="imagePath" type="file" name="imagePath" />
+      <label for="viewLink">View Link:</label>
+      <input type="url" id="viewLink" name="viewLink" required />
+      <label for="githubLink">GitHub Link:</label>
+      <input type="url" id="githubLink" name="githubLink" required />
+      <button type="submit">Update</button>
+    </form>
+    <a href="/">Back to Projects</a>
+  </body>
+
+  <script src="/js/script.js"></script>
+</html>

@@ -277,6 +277,17 @@ section {
   padding-right: 0.6rem;
 }
 
+.project-links a {
+  text-decoration: none;
+  color: var(--font-color);
+
+}
+
+.project-links a:hover {
+  color: var(--secondary-color);
+
+}
+
 
 .contact-container {
   display: flex;

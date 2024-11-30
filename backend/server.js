@@ -54,7 +54,7 @@ let projects = [
     id: 1,
     title: 'Dynamic E-Commerce Platform',
     description:
-      'Built a responsive e-commerce platform with HTML, CSS, and React.js for the frontend and Node.js with Express for the backend.',
+      'Built a responsive e-commerce platform with HTML, CSS, and React.js for the frontend and Node.js with Express for the backend. The platform features secure user authentication, a custom shopping cart, product pages, and checkout integrations. Implemented RESTful APIs and used MySQL for managing product inventory and order data.',
     imagePath: '/images/thumbnail-1.png',
     viewLink: '#',
     githubLink: '#',
@@ -63,7 +63,7 @@ let projects = [
     id: 2,
     title: 'Machine Learning Dashboard',
     description:
-      'Developed a dashboard to visualize machine learning data and predictions using Flask and React.js.',
+      'Developed a dashboard to visualize machine learning data and predictions, using Flask for the backend and React.js for the frontend. The application retrieves and processes data from a MySQL database and displays results in interactive charts. Hosted on Google Cloud Platform, it provides insights from the model and enables users to filter and analyze specific data points.',
     imagePath: '/images/thumbnail-2.png',
     viewLink: '#',
     githubLink: '#',
@@ -72,7 +72,7 @@ let projects = [
     id: 3,
     title: 'Portfolio Blog with CMS',
     description:
-      'Built a personal blog with a content management system (CMS) using Django and React.js.',
+      'Built a personal blog with a content management system (CMS) to manage and display posts, using Django for the backend and React.js for the frontend. Integrated MySQL for database management and created a rich-text editor for easy post creation. Deployed on AWS with automated CI/CD for smooth updates, it also includes SEO optimization and a responsive design.',
     imagePath: '/images/thumbnail-3.png',
     viewLink: '#',
     githubLink: '#',

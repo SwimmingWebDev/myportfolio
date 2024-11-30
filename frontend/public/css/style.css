@@ -333,6 +333,114 @@ footer {
 
 /* end of admin options */
 
+.form-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+form input,
+textarea {
+  width: 500px;
+  border: 1px solid var(--font-color);
+  background: var(--bg-color);
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+  font-family: "Noto Sans", sans-serif;
+}
+
+form textarea {
+  height: 200px;
+}
+
+
+
+button {
+  margin-top: 1rem;
+  font-size: 1rem;
+  border: none;
+  font-family: "Noto Sans", sans-serif;
+  padding: 1rem 0.5rem;
+  width: 150px;
+  background-color: var(--font-color);
+  color: var(--bg-color);
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  color: var(--bg-color);
+}
+
+.btn-back {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.btn-back i {
+  margin-left: 2rem;
+  margin-right: 0.6rem;
+}
+
+.btn-back:hover {
+  color: var(--font-color);
+}
+
+
+/* subpage menu */
+.subpage-nav {
+  display: flex;
+  font-size: 1rem;
+  align-items: center;
+  padding: 1rem;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: var(--font-color);
+  border-bottom: 1px solid var(--font-color);
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+
+
+.subpage-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.subpage-nav ul li {
+  margin: 0 1rem;
+}
+
+.subpage-nav a {
+  color: var(--font-color);
+  text-decoration: none;
+  transition: all 0.1s ease-out;
+}
+
+
+.subpage-nav a:hover {
+  color: var(--secondary-color);
+}
+
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {

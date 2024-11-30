@@ -2,27 +2,73 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="/css/style.css" />
+    <!-- font-awesome icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
-    <h1>Add New Project</h1>
-    <form
-      action="/api/projects/add"
-      method="POST"
-      enctype="multipart/form-data"
-    >
-      <label for="title">Title:</label>
-      <input type="text" name="title" required />
-      <label for="description">Description:</label>
-      <textarea name="description" required></textarea>
-      <label for="image">Image:</label>
-      <input type="file" name="image" required />
-      <label for="viewLink">View Link:</label>
-      <input type="url" id="viewLink" name="viewLink" required />
-      <label for="githubLink">GitHub Link:</label>
-      <input type="url" id="githubLink" name="githubLink" required />
-      <button type="submit">Save</button>
-    </form>
-    <a href="#projects">Back to Projects</a>
+    <header>
+      <nav class="subpage-nav">
+        <div class="home-logo">
+          <a href="/">
+            <p>MyPortfolio</p>
+          </a>
+        </div>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#github">GitHub Contributions</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li id="auth-link"><a href="/auth/google">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="add">
+        <div class="section-title">
+          <span class="line"></span>
+          <span class="text">Add New Project</span>
+        </div>
+        <div class="content-container">
+          <form
+            action="/api/projects/add"
+            class="form-container"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <label for="title">Title</label>
+            <input type="text" name="title" required />
+            <label for="description">Description</label>
+            <textarea name="description" required></textarea>
+            <label for="image">Image</label>
+            <input type="file" name="image" required />
+            <label for="viewLink">View Link</label>
+            <input
+              type="url"
+              id="viewLink"
+              placeholder="https://"
+              name="viewLink"
+              required
+            />
+            <label for="githubLink">GitHub Link</label>
+            <input
+              type="url"
+              id="githubLink"
+              placeholder="https://"
+              name="githubLink"
+              required
+            />
+            <button type="submit">Add</button>
+          </form>
+          <a href="/" class="btn-back"
+            ><i class="fa-solid fa-arrow-left"></i>Back to Projects</a
+          >
+        </div>
+      </section>
+    </main>
   </body>
   <script src="/js/script.js"></script>
 </html>

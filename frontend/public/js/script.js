@@ -150,11 +150,11 @@ const initializeEditPage = () => {
       document.getElementById('viewLink').value = data.viewLink;
       document.getElementById('githubLink').value = data.githubLink;
 
-      if (data.imagePath) {
-        const currentImage = document.createElement('p');
-        currentImage.textContent = `Current Image: ${data.imagePath}`;
-        editForm.insertBefore(currentImage, editForm.firstChild);
-      }
+      // if (data.imagePath) {
+      //   const currentImage = document.createElement('p');
+      //   currentImage.textContent = `Current Image ${data.imagePath}`;
+      //   editForm.insertBefore(currentImage, editForm.firstChild);
+      // }
     })
     .catch((error) => console.error('Error fetching project details:', error));
 
